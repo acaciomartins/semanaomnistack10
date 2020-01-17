@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
 const routes = require('./routes');
 
 mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true });
 
+app.use(cors());
 // Para todas as rotas - Aceita Json no body
 app.use(express.json());
 app.use(routes);
