@@ -29,7 +29,7 @@ function App() {
 
     loadDevs();
 
-  })
+  }, [])
 
   async function handleAddDev(data) {
     const response = await api.post('/devs', data)
